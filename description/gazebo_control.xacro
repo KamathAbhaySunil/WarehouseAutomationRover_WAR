@@ -1,0 +1,29 @@
+<gazebo>
+  <plugin name="ros_ign_diff_drive" filename="libignition-gazebo-ros-diff-drive-system.so">
+    <ros>
+      <!-- Use root namespace for cmd_vel and odom -->
+      <remapping>cmd_vel:=/cmd_vel</remapping>
+      <remapping>odom:=/odom</remapping>
+    </ros>
+
+    <!-- Wheel joints -->
+    <left_joint>left_wheel_joint</left_joint>
+    <right_joint>right_wheel_joint</right_joint>
+
+    <!-- Robot geometry -->
+    <wheel_separation>0.35</wheel_separation>
+    <wheel_radius>0.05</wheel_radius>
+
+    <!-- Motor limits -->
+    <max_torque>200</max_torque>
+    <max_acceleration>10.0</max_acceleration>
+
+    <!-- Frame IDs -->
+    <odom_frame>odom</odom_frame>
+    <base_frame>base_link</base_frame>
+
+    <!-- Publish odom and TF -->
+    <publish_odom>true</publish_odom>
+    <publish_odom_tf>true</publish_odom_tf>
+  </plugin>
+</gazebo>
